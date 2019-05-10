@@ -1,19 +1,64 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
+import Layout from '@/views/layout/layout.vue'
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
     {
       path: '/',
-      name: 'index',
-      component: () => import('@/views/index/index.vue'),
-      meta: {
-        title: '首页'
-      }
+      component: Layout,
+      redirect: '/index'
+    },
+    {
+      path: '/index',
+      component: Layout,
+      children: [{
+        path: '/',
+        name: 'index',
+        component: () => import('@/views/index/index.vue'),
+        meta: {
+          title: '首页'
+        }
+      }]
+    },
+    {
+      path: '/chat',
+      component: Layout,
+      children: [{
+        path: '/',
+        name: 'chat',
+        component: () => import('@/views/chat/index.vue'),
+        meta: {
+          title: '聊天'
+        }
+      }]
+    },
+    {
+      path: '/learnRoom',
+      component: Layout,
+      children: [{
+        path: '/',
+        name: 'learnRoom',
+        component: () => import('@/views/learnRoom/index.vue'),
+        meta: {
+          title: '学堂'
+        }
+      }]
+    },
+    {
+      path: '/mine',
+      component: Layout,
+      children: [{
+        path: '/',
+        name: 'mine',
+        component: () => import('@/views/mine/index.vue'),
+        meta: {
+          title: '我的'
+        }
+      }]
     },
     {
       path: '/login',
@@ -38,20 +83,20 @@ export default new Router({
       meta: {
         title: '忘记密码'
       }
-    }, {
-      path: '/chat',
-      name: 'chat',
-      component: () => import('@/views/chat/index.vue'),
-      meta: {
-        title: '聊天'
-      }
-    }, {
-      path: '/learnRoom',
-      name: 'learnRoom',
-      component: () => import('@/views/learnRoom/index.vue'),
-      meta: {
-        title: '学堂'
-      }
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  /* 路由发生变化修改页面title */
+  const whiteList = ['login', 'register', 'forget']
+  if (whiteList.indexOf(to.name) === -1) {
+    next({ name: 'index' })
+  }
+  // if (to.meta.title) {
+  //   document.title = to.meta.title
+  // }
+  // next()
+})
+
+export default router
