@@ -91,7 +91,8 @@ router.beforeEach((to, from, next) => {
   /* 路由发生变化修改页面title */
   const whiteList = ['login', 'register', 'forget']
   if (whiteList.indexOf(to.name) === -1) {
-    next({ name: 'index' })
+    console.log(to)
+    next({ name: 'login' })
   }
   // if (to.meta.title) {
   //   document.title = to.meta.title
@@ -100,3 +101,37 @@ router.beforeEach((to, from, next) => {
 })
 
 export default router
+
+// {
+//   path: '/login',
+//   children: [{
+//     path: '/',
+//     name: 'login',
+//     component: () => import('@/views/login/login.vue'),
+//     meta: {
+//       title: '登录'
+//     }
+//   }]
+// },
+// {
+//   path: '/register',
+//   children: [{
+//     path: '/',
+//     name: 'register',
+//     component: () => import('@/views/login/register.vue'),
+//     meta: {
+//       title: '注册'
+//     }
+//   }]
+// },
+// {
+//   path: '/forget',
+//   children: [{
+//     path: '/',
+//     name: 'forget',
+//     component: () => import('@/views/login/forget.vue'),
+//     meta: {
+//       title: '忘记密码'
+//     }
+//   }]
+// }
