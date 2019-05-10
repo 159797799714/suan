@@ -31,7 +31,7 @@ export default {
           icon: 'icon iconwendang'
         }, {
           title: '我的',
-          name: 'register',
+          name: 'mine',
           icon: 'icon iconwode'
         }
       ],
@@ -48,7 +48,7 @@ export default {
   },
   methods: {
     clickFooter (index) {
-      this.$router.push({ name: this.tabList[index].name})
+      this.$router.push({ name: this.tabList[index].name })
       this.selectIndex = index
     }
   }

@@ -44,7 +44,7 @@ export default {
       ]
     }
   },
-  mounted() {
+  mounted  () {
     window.addEventListener('scroll', this.menu)
   },
   methods: {
@@ -53,7 +53,7 @@ export default {
       this.$refs.slipe.style.left = this.$refs.item[index].offsetLeft + 'px'
     },
     menu () {
-      this.scroll = document.documentElement.scrollTop || document.body.scrollTop;
+      this.scroll = document.documentElement.scrollTop || document.body.scrollTop
       console.log(this.scroll)
     }
   }

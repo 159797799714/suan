@@ -18,24 +18,24 @@ export default {
   title: '忘记',
   data () {
     return {
-     chatList: [
-       {
-         imgUrl: require('@/assets/index/user.jpg'),
-         name: '张三',
-         chat_info: '很高心认识你',
-         time: '上午10:30'
-       }, {
-         imgUrl: require('@/assets/index/user.jpg'),
-         name: '张三',
-         chat_info: '很高心认识你',
-         time: '上午10:30'
-       }, {
-         imgUrl: require('@/assets/index/user.jpg'),
-         name: '张三',
-         chat_info: '很高心认识你',
-         time: '上午10:30'
-       }
-     ]
+      chatList: [
+        {
+          imgUrl: require('@/assets/index/user.jpg'),
+          name: '张三',
+          chat_info: '很高心认识你',
+          time: '上午10:30'
+        }, {
+          imgUrl: require('@/assets/index/user.jpg'),
+          name: '张三',
+          chat_info: '很高心认识你',
+          time: '上午10:30'
+        }, {
+          imgUrl: require('@/assets/index/user.jpg'),
+          name: '张三',
+          chat_info: '很高心认识你',
+          time: '上午10:30'
+        }
+      ]
     }
   }
 }

@@ -18,7 +18,7 @@ export default new Router({
     {
       path: '/login',
       name: 'login',
-      component: () => import('./views/login/login.vue'),
+      component: () => import('@/views/login/login.vue'),
       meta: {
         title: '登录'
       }
@@ -26,7 +26,7 @@ export default new Router({
     {
       path: '/register',
       name: 'register',
-      component: () => import('./views/login/register.vue'),
+      component: () => import('@/views/login/register.vue'),
       meta: {
         title: '注册'
       }
@@ -34,21 +34,21 @@ export default new Router({
     {
       path: '/forget',
       name: 'forget',
-      component: () => import('./views/login/forget.vue'),
+      component: () => import('@/views/login/forget.vue'),
       meta: {
         title: '忘记密码'
       }
     }, {
       path: '/chat',
       name: 'chat',
-      component: () => import('./views/chat/index.vue'),
+      component: () => import('@/views/chat/index.vue'),
       meta: {
         title: '聊天'
       }
     }, {
       path: '/learnRoom',
       name: 'learnRoom',
-      component: () => import('./views/learnRoom/index.vue'),
+      component: () => import('@/views/learnRoom/index.vue'),
       meta: {
         title: '学堂'
       }
